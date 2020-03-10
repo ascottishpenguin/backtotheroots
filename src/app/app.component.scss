@@ -1,0 +1,184 @@
+.header{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    position: relative;
+    background-color: rgb(48, 46, 49);
+    
+}
+
+.landing-color{
+    background-color: #4C5542;
+    // max-height: 85%;
+    min-width: 50%;
+    h1 {
+        // mix-blend-mode: multiply;
+        letter-spacing: 0em;
+        color: #D2D2C9;
+        font-size: 10vw;
+    }
+    #back{
+        top: 12vh;
+        position: absolute;
+        right: 10vw;
+    }
+    
+    #to {
+            top: 27vh;
+            position: absolute;
+            right: 10vw;
+    }
+    
+    #the {
+        top: 42vh;
+        position: absolute;
+        right: 10vw;
+    }
+    
+    #roots {
+        top: 55vh;
+        position: absolute;
+        right: 18vw;
+    }
+}
+
+.landing-image {
+    min-height: 100%;
+    max-width: 50%;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+
+  
+
+}
+
+
+.about{
+   min-height: 100vh;
+   background-color: #393232;
+ 
+}
+
+
+  
+
+
+svg {
+   
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    &.animate{
+
+        .leaf {
+
+            stroke: none;
+            animation: appear 1s linear forwards;
+            animation-delay: 4.5s;
+      
+            }        
+        #trunk {
+            stroke-dasharray: 42000;
+            stroke-dashoffset: 42000;
+            stroke: #D2D2C9;
+            stroke-width: 4;
+            animation: dash 5s linear forwards;
+        
+          }
+
+}
+}
+
+
+.about {
+    position: relative;
+    min-height: 100vh;
+
+    h1 {
+        // mix-blend-mode: multiply;
+        letter-spacing: 0em;
+        color: #D2D2C9;
+        font-size: 4vw;
+        margin-left: 8vw;
+        margin-top: 10vh;
+    }
+
+    hr {
+        margin-left: 8vw;
+        width: 0;
+        
+
+        &.animate{
+            animation: grow 2s linear forwards;
+        }
+        
+    }
+
+
+
+    .paragraphs{
+        margin-left: 8vw;
+        max-width: 40%;
+        margin-top: 10vh;
+    }
+
+    p {
+        color: #D2D2C9;
+        font-size: 2vw;
+    }
+}
+
+.projects {
+    min-height: 100vh;
+    background-color: #D2D2C9;
+
+     h1 {
+        // mix-blend-mode: multiply;
+        letter-spacing: 0em;
+        color: #393232;
+        font-size: 4vw;
+        margin-left: 8vw;
+        margin-top: 10vh;
+    }
+
+    hr {
+        margin-left: 8vw;
+        width: 0;
+        color: #393232;
+
+        &.animate{
+            animation: grow 2s linear forwards;
+        }
+        
+    }
+
+    p {
+        color: #393232;
+        font-size: 2vw;
+    }
+}
+
+
+@keyframes appear {
+    to {
+      stroke: black;
+      fill: #6E845F
+    }
+}
+
+@keyframes grow {
+    to {
+        width: 40vw;
+    }
+}
+
+@keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+}
