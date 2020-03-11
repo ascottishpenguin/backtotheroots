@@ -31,7 +31,7 @@ export class AppComponent {
       this.treeWidth = screenWidth 
       return this.treeWidth
     }
-    this.treeWidth = screenWidth * 0.48
+    this.treeWidth = screenWidth * 0.5
     return this.treeWidth
   }
 
@@ -41,7 +41,7 @@ export class AppComponent {
       this.treeWidth = screenWidth * 0.8
       return this.treeWidth
     }
-    this.treeWidth = screenWidth * 0.48
+    this.treeWidth = screenWidth * 0.5
     return this.treeWidth
   }
 
