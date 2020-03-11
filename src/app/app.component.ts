@@ -27,20 +27,30 @@ export class AppComponent {
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     let screenWidth = window.innerWidth
-    // if (screenWidth > 1680) {
-    //   return 840
-    // }
+    if (screenWidth < 600) {
+      this.treeWidth = screenWidth 
+      return this.treeWidth
+    }
     this.treeWidth = screenWidth * 0.48
     return this.treeWidth
   }
 
   firstTreeWidth() {
     let screenWidth = window.innerWidth
-    // if (screenWidth > 1680) {
-    //   return 840
-    // }
+    if (screenWidth < 600) {
+      this.treeWidth = screenWidth * 0.8
+      return this.treeWidth
+    }
     this.treeWidth = screenWidth * 0.48
     return this.treeWidth
+  }
+
+  get treeHeight() {
+    if (window.innerWidth <= 600) {
+      return window.innerHeight * 0.3
+    }
+    return window.innerHeight * 0.58
+    
   }
 
   ngOnInit() {

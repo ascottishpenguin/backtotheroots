@@ -1,6 +1,6 @@
 .header{
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
+    min-width: 100vw;
     display: flex;
     position: relative;
     background-color: rgb(48, 46, 49);
@@ -9,8 +9,8 @@
 
 .landing-color{
     background-color: #4C5542;
-    // max-height: 85%;
     min-width: 50%;
+
     h1 {
         // mix-blend-mode: multiply;
         letter-spacing: 0em;
@@ -21,30 +21,42 @@
         top: 12vh;
         position: absolute;
         right: 10vw;
+        opacity: 0;
+        animation: fadeIn 1s linear forwards;
+
     }
     
     #to {
             top: 27vh;
             position: absolute;
             right: 10vw;
+            opacity: 0;
+            animation: fadeIn 1s linear forwards;
+            animation-delay: 0.5s;
     }
     
     #the {
         top: 42vh;
         position: absolute;
         right: 10vw;
+        opacity: 0;
+        animation: fadeIn 1s linear forwards;
+        animation-delay: 1s;
     }
     
     #roots {
         top: 55vh;
         position: absolute;
         right: 18vw;
+        opacity: 0;
+        animation: fadeIn 1s linear forwards;
+        animation-delay: 2s;
     }
 }
 
 .landing-image {
     min-height: 100%;
-    max-width: 50%;
+    min-width: 50%;
 
     img {
         width: 100%;
@@ -70,9 +82,8 @@
 svg {
    
     position: absolute;
-    right: 0;
     bottom: 0;
-
+    right: 0;
     &.animate{
 
         .leaf {
@@ -141,7 +152,7 @@ svg {
         // mix-blend-mode: multiply;
         letter-spacing: 0em;
         color: #393232;
-        font-size: 4vw;
+        font-size: 3vw;
         margin-left: 8vw;
         margin-top: 10vh;
     }
@@ -182,3 +193,163 @@ svg {
       stroke-dashoffset: 0;
     }
 }
+
+@keyframes fadeIn {
+    to {
+      opacity: 100%
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header{
+        min-height: 100vh;
+        min-width: 100vw;
+        display: flex;
+        position: relative;
+        background-color: rgb(48, 46, 49);
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        
+    }
+    
+    .landing-color{
+        background-color: #4C5542;
+        max-height: 50%;
+        min-width: 100%;
+        min-height: 50vh;
+    
+        h1 {
+            // mix-blend-mode: multiply;
+            letter-spacing: 0em;
+            color: #D2D2C9;
+            font-size: 20vw;
+        }
+        #back{
+            top: 5vh;
+            position: absolute;
+            right: 10vw;
+        }
+        
+        #to {
+                top: 15vh;
+                position: absolute;
+                right: 10vw;
+        }
+        
+        #the {
+            top: 25vh;
+            position: absolute;
+            right: 10vw;
+        }
+        
+        #roots {
+            top: 35vh;
+            position: absolute;
+            right: 32vw;
+        }
+    }
+    
+    .landing-image {
+        max-height: 50%;
+        min-width: 100%;
+        min-height: 50vh;
+    }
+
+    .about {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding: 0;
+    
+        h1 {
+            // mix-blend-mode: multiply;
+            letter-spacing: 0em;
+            color: #D2D2C9;
+            font-size: 6vw;
+            // margin: 4vw;
+            // margin-top: 10vh;
+        }
+    
+        hr {
+    
+            
+    
+            &.animate{
+                animation: grow 2s linear forwards;
+            }
+            
+        }
+    
+    
+    
+        .paragraphs{
+            margin-right: 8vw;
+            min-width: 80%;
+            // margin-top: 10vh;
+            // padding: 4vw;
+        }
+    
+        p {
+            color: #D2D2C9;
+            font-size: 4vw;
+        }
+        svg {
+            position: absolute;
+            right: 0;
+            margin: 0;
+        
+            &.animate{
+        
+                .leaf {
+        
+                    stroke: none;
+                    animation: appear 1s linear forwards;
+                    animation-delay: 4.5s;
+              
+                    }        
+                #trunk {
+                    stroke-dasharray: 42000;
+                    stroke-dashoffset: 42000;
+                    stroke: #D2D2C9;
+                    stroke-width: 4;
+                    animation: dash 5s linear forwards;
+                
+                  }
+        
+        }
+        }
+    }
+    
+    .projects {
+        min-height: 100vh;
+        background-color: #D2D2C9;
+    
+         h1 {
+            // mix-blend-mode: multiply;
+            letter-spacing: 0em;
+            color: #393232;
+            font-size: 4vw;
+            margin-left: 8vw;
+            margin-top: 10vh;
+        }
+    
+        hr {
+            margin-left: 8vw;
+            width: 0;
+            color: #393232;
+    
+            &.animate{
+                animation: grow 2s linear forwards;
+            }
+            
+        }
+    
+        p {
+            color: #393232;
+            font-size: 2vw;
+        }
+    }
+    
+    
+  }
